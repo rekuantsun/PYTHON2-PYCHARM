@@ -1,4 +1,4 @@
-#1
+'''#1
 n = float(input('enter number: '))
 if (n >= 0):
     print('positive number')
@@ -38,12 +38,13 @@ if (1 <= nday <= 7):
     print('Day',nday,'of the week is',days[nday-1])
 else:
     nday = nday % 7
-    print('Day',nday,'of the week is',days[nday-1])
+    print('Day',nday,'of the week is',days[nday-1])'''
 
 #5
+import math
 a = float(input('a = '))
 b = float(input('b = '))
-if(round(a*1000)==round(b*1000)):
+if(math.floor(a*1000)==math.floor(b*1000)):
     print('they are same')
 else:
     print('They are different')
