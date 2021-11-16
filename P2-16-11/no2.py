@@ -33,7 +33,7 @@ else:
 
 #4
 days = ['monday','tuesday','wednesday','thurday','friday','saturday','sunday']
-nday = int(input('Day: '))
+nday = abs(int(input('Day: ')))
 print('Day',nday,'of the week:')
 nday = nday % 7
 print(days[nday-1])
