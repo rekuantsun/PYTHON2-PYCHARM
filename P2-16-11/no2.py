@@ -34,12 +34,9 @@ else:
 #4
 days = ['monday','tuesday','wednesday','thurday','friday','saturday','sunday']
 nday = int(input('Day: '))
-if (1 <= nday <= 7):
-    print('Day',nday,'of the week is',days[nday-1])
-else:
-    nday = nday % 7
-    print('Day',nday,'of the week is',days[nday-1])
-
+print('Day',nday,'of the week:')
+nday = nday % 7
+print(days[nday-1])
 #5
 import math
 a = float(input('a = '))
