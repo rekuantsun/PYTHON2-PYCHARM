@@ -48,3 +48,21 @@ if(math.floor(a*1000)==math.floor(b*1000)):
     print('they are same')
 else:
     print('They are different')
+
+#or
+import math
+c = float(input('c = '))
+d = float(input('d = '))
+if(math.floor(c)!=math.floor(d)):
+    print('they are different')
+else:
+    c=str(c)
+    d=str(d)
+    nc=c.index('.')
+    nd=d.index('.')
+    mc=c[nc+1:nc+4]
+    md=d[nd+1:nd+4]
+    if(mc==md):
+        print('they are same')
+    else:
+        print('they are different')
