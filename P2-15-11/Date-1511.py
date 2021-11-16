@@ -1,8 +1,6 @@
 #1
-import random
-
 L=[1,2,3,4,5,6]
-print('sum of list:',sum(L))
+print('sum all the items in a list:',sum(L))
 
 #2
 import math
@@ -27,6 +25,7 @@ print('sort a list in ascending order:',L1)
 print('get the size of a list:',len(L))
 
 #8
+import random
 print('get random element(s) of a list:',random.choice(L))
 
 #9
