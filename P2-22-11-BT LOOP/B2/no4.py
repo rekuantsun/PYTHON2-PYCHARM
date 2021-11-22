@@ -3,6 +3,6 @@
 - Chuyển chuỗi vừa nhập thành 1 danh sách với điều kiện phân tách là dấu khoảng trắng
 (space)
 - Hiển thị danh sách thu được ra màn hình'''
-l= 'a b c 2 3 4 5.4 6.1'
-l=l.split(' ')
+l= 'a b   c 2 3 4 5.4 6.1'
+l=l.split()
 print(l)
