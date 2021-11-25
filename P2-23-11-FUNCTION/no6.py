@@ -14,18 +14,18 @@ def bacnhat(b,c):
         print('có một nghiệm x =',c/b)
 def bachai(a,b,c):
     import math
-    denta = b**2 - 4*a*b
-    if denta>0:
-        x1=(-b - math.sqrt(denta)) / (2*a)
-        x2=(-b + math.sqrt(denta)) / (2*a)
+    delta = b**2 - 4*a*b
+    if delta>0:
+        x1=(-b - math.sqrt(delta)) / (2*a)
+        x2=(-b + math.sqrt(delta)) / (2*a)
         print('Phương trình có 2 nghiệm')
         print('x1 =',round(x1,3))
         print('x2 =',round(x2,3))
-    if denta == 0:
+    if delta == 0:
         x = (-b) / (2*a)
         print('Phương tình có một nghiệm duy nhất')
         print('x1 = x2 =',x)
-    if denta < 0:
+    if delta < 0:
         print('Phương trình vô nghiệm')
 def main():
     print('Chương trình giải phương trình bậc 1 hoặc bậc 2')

@@ -5,4 +5,4 @@
 Từ chương trình chính gọi thực hiện hàm này.'''
 def inrachuoi(chuoi):
     print(chuoi)
-inrachuoi('Lê Quang Trung')
+inrachuoi('Chúc mọi người một ngày vui vẻ !')
