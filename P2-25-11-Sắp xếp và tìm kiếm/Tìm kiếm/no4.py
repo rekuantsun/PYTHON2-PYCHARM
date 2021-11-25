@@ -23,11 +23,16 @@ for i in range(len(l)):
         if l[i] > l[j]:
             l[i], l[j] = l[j], l[i]
 print('danh sách sau khi sắp xếp theo chiều tăng dần:',l)
+l1=[]
+lap=[]
 count = 0
 for i in range(len(l)):
     if l[i] == x:
-        print('vị trí xuất hiện của x là:',i)
+        l1.append(i)
+        lap.append(count)
     count += 1
-    print('số lần lặp là:', count)
+if (len(l1) > 0):
+    print('những vị trí mà giá trị x xuất hiện:',l1)
+    print('số lần lặp tại mỗi vị trí là:', lap)
 else:
     print('không tìm thấy giá trị x')
