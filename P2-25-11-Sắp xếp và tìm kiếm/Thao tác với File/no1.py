@@ -4,5 +4,6 @@
 - Lưu chuỗi ký tự ở trên vào tập tin.'''
 cktu = input("Nhập 1 chuỗi: ")
 ttt = input("Nhập tên tệp: ") + ".txt"
-with open (ttt, "w") as f:
-    f.write(cktu)
+f=open(ttt,'w')
+f.write(cktu)
+f.close()

@@ -2,7 +2,15 @@
 yêu cầu sau:
 - Sắp xếp danh sách trên theo chiều tăng dần
 - In kết quả ra màn hình'''
-a = [2,-1,1,9,-20,13,-18,65,11,-3]
+a = []
+while True:
+    n=input('Nhập phần tử của danh sách: ').upper()
+    if n == "N":
+        break
+    a.append(int(n))
+print('Danh sách trước khi sắp xếp')
+print(a)
+print('Danh sách sau khi sắp xếp tăng dần')
 for i in range(len(a)):
     for j in range(i+1,len(a)):
         if a[i]>a[j]:

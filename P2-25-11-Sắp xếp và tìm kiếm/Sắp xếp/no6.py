@@ -12,8 +12,8 @@ o Hàm này trả về một danh sách các số nguyên được sắp xếp t
 o Tham số đầu vào x là một danh sách các số nguyên;
 o Hàm này trả về một danh sách các số nguyên được sắp xếp theo chiều tăng dần.
 - Chương trình chính (__main__) gọi thực hiện các hàm trên và in kết quả ra màn hình.'''
+import random
 def sinh_ngau_nhien_danh_sach_so_nguyen(n,max_value):
-    import random
     l1 = []
     for i in range(n):
         l1.append(random.randint(0, max_value))

@@ -8,15 +8,29 @@ o Các số phân tách nhau bởi dấu phẩy (,)
 o 10 số trên một hàng
 o Các số phan tách nhau bởi dấu tab.'''
 
-def danhsach():
-    import random
-    l=[]
-    for i in range(1000):
-        l.append(random.randint(-1000,1000))
-    return l
-
-def ghids(ttt):
-    write open(ttt,'a+') as f:
+import random
+danhsach = []
+count = 0
+for i in range(1000):
+    danhsach.append(random.randint(-1000, 1000))
+filename = input("Tên tập tin: ") +'.txt'
+for i in danhsach:
+    if count < 9:
+        f = open(filename, 'a')
+        cktu = str(i)+','
+        f.write(cktu)
+        f.close()
+        count +=1
+    else:
+        f = open(filename, 'a')
+        f.write(str(i)+"\n")
+        f.close()
+        count = 0
+f = open(filename, 'r')
+a = f.readlines()
+for i in a:
+    print(i.replace(",", " "))
+f.close()
 
 
 

@@ -16,8 +16,8 @@ def nhapdanhsach():
         print('Nhập Y để tiếp tục hoặc N để kết thúc:')
         choice = input().upper()
         if(choice == 'N'):
-            return l1
-            return False
+            break
+    return l1
 def sapxepdanhsachsothuc(x):
     for i in range(len(x)):
         for j in range(i + 1, len(x)):

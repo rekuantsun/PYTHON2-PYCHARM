@@ -4,5 +4,6 @@
 - Ghi chuỗi kí tự này vào cuối tập tin ở trên'''
 ttt=input("Tên tập tin: ")+'.txt'
 cktu=input("Chuỗi ký tự: ")
-with open(ttt,'a') as f:
-    f.write(cktu)
+f = open(ttt, 'a',)
+f.write(cktu)
+f.close()
