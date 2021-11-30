@@ -3,9 +3,9 @@ class XeMay():
     tenxe: str
     xuatxu: str
 
-    def __init__(self,CC,Broadname,From):
+    def __init__(self,CC,Brandname,From):
         self.phankhoi = CC
-        self.tenxe = Broadname
+        self.tenxe = Brandname
         self.xuatxu = From
 
     def outputXeMay(self) -> str:
