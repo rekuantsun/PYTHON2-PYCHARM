@@ -1,103 +1,110 @@
-class Customer:
-    dsdh: list[Order]
-    name : str
-    address: str
-    def addOder(self,Oder):
+import datetime
+
+class Item():
+    shippingWeight: str
+    description: str
+
+    def __init__(self,SpW,Des) -> None:
+        super().__init__()
+        self.shippingWeight=SpW
+        self.description=Des
+
+    def getPriceForQuantily(self):
+        pass
+    def getTaxi(self):
+        pass
+    def inStock(self):
         pass
 
-class OrderDetail:
+class OrderDetail():
+    quantily: str
     taxStatus: str
+    item: Item
 
-    def __init__(self,quantity,taxStatus) -> None:
-        self.taxStatus=taxStatus
-        self.quantity=quantity
+    def __init__(self,Quantily,TaxStatus) -> None:
+        super().__init__()
+        self.quantily=Quantily
+        self.taxStatus=TaxStatus
 
-    def calcSubTotal(self)->int:
+    def calcSubTotal(self):
         pass
-
-    def calcWeight(self)->int:
+    def calcWeight(self):
         pass
-
-    def calcTax(self)->int:
+    def calcTaxt(self):
         pass
-
-class Order:
-    status: list[OderDetail]
-
-    def __init__(self,date,status) -> None:
-        self.date=date
-        self.status=status
-
-    def addPayment(self,Payment):
-        pass
-
-    def calcSubTotal(self)->int:
-        pass
-
-    def calcTax(self,Tax):
-        self.status=Tax
-        pass
-
-    def calcTotal(self)->int:
-        pass
-
-    def calcTotalWeight(self)->int:
-        pass
-
-class Payment:
+class Payment():
     amount: float
 
-    def __init__(self,amount) -> None:
-        self.amount=amount
-        pass
+    def __init__(self,Amount) -> None:
+        super().__init__()
+        self.amount=Amount
 
 class Cash(Payment):
     cashTendered: float
 
-    def __init__(self, amount,cashTendered) -> None:
-        Payment.__init__(self, amount)
-        self.cashTendered=cashTendered
+    def __init__(self, Amount, CashTendered) -> None:
+        Payment.__init__(self, Amount)
+        self.cashTendered=CashTendered
 
 class Check(Payment):
     name: str
     bankID: str
 
-    def __init__(self, amount,name,bankID) -> None:
-        Payment.__init__(self,amount)
+    def __init__(self, Amount, name, bankID) -> None:
+        Payment.__init__(self,Amount)
         self.name=name
         self.bankID=bankID
 
-    def authorized(self)->bool:
+    def authorized(self):
         pass
 
 class Credit(Payment):
     number: str
     type: str
+    expDate: str
 
-    def __init__(self, amount,number,type,expDate) -> None:
-        Payment.__init__(self,amount)
-        self.type=type
+    def __init__(self, Amount,number, type, expDate) -> None:
+        Payment.__init__(Amount)
         self.number=number
+        self.type=type
+        self.expDate=expDate
 
-    def authorized(self)->bool:
+    def authorized(self):
         pass
 
-class Item():
-    shippingWeight: float
-    description: str
+class Order():
+    date: datetime
+    status: str
+    orderDetail: list[OrderDetail]
+    payment: list[Cash,Check,Credit]
 
-    def __init__(self,shippingWeight,description) -> None:
-        self.shippingWeight=shippingWeight
-        self.description=description
+    def __init__(self,date,status) -> None:
+        super().__init__()
+        self.date=date
+        self.status=status
 
-    def getPriceForQuantity(self)->str:
+    def calcSubTotal(self):
+        pass
+    def calcTax(self):
+        pass
+    def calcTotal(self):
+        pass
+    def calcTotalWeight(self):
         pass
 
-    def getTaxi(self)->str:
-        pass
+class Customer():
+    name: str
+    address: str
+    order: list[Order]
 
-    def inStock(self)->str:
-        pass
+    def __init__(self,name,address) -> None:
+        super().__init__()
+        self.name=name
+        self.address=address
+
+
+
+
 
 
 
