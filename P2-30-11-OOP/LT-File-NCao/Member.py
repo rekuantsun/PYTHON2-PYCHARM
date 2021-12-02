@@ -1,6 +1,6 @@
 class Person:
     name: str
-    phonenumber: int
+    phonenumber: str
     emailaddress: str
 
     def __init__(self,Name,PhoneNumber,EmailAddress) -> None:
@@ -10,27 +10,27 @@ class Person:
         self.emailaddress = EmailAddress
 
     def outputPerson(self) -> str:
-        ans = 'Name: '+self.name+'; Phone number: '+str(self.phonenumber)+'; Email address: '+self.emailaddress+'\n'
+        ans = 'Name: '+self.name+'; Phone number: '+self.phonenumber+'; Email address: '+self.emailaddress+'\n'
         return ans
 
 class Student(Person):
-    studentnumber: int
+    studentnumber: str
     averagemark: float
 
     def __init__(self, Name, PhoneNumber, EmailAddress,StudentNumber,AverageMark) -> None:
-        Person.__init__(Name, PhoneNumber, EmailAddress)
+        Person.__init__(self,Name, PhoneNumber, EmailAddress)
         self.studentnumber = StudentNumber
         self.averagemark = AverageMark
 
     def outputStudent(self) -> str:
-        ans = self.outputPerson() + 'Student Number: '+str(self.studentnumber)+'; Average Mark: '+str(self.averagemark)+'\n'
+        ans = self.outputPerson() + 'Student Number: '+self.studentnumber+'; Average Mark: '+str(self.averagemark)+'\n'
         return ans
 
 class Professor(Person):
     salary: int
 
     def __init__(self, Name, PhoneNumber, EmailAddress,Salary) -> None:
-        Person.__init__(Name, PhoneNumber, EmailAddress)
+        Person.__init__(self,Name, PhoneNumber, EmailAddress)
         self.salary = Salary
 
     def outputProfessor(self) -> str:

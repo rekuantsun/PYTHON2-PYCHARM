@@ -1,30 +1,15 @@
-from Member import Person,Student,Professor
-def enter_Person():
-    person=[]
-    count = 1
-    while count <=10:
-        person.append(Person(input('Name: '),int(input('Phone Number: ')),input('Email Address: ')).outputPerson())
-        count+=1
-    return person
-def enter_Student():
-    student=[]
-    count = 1
-    while count <= 10:
-        student.append(Student(input('Name: '), int(input('Phone Number: ')), input('Email Address: '),input('Student Number: '),float(input('Average Mark: '))).outputStudent())
-        count += 1
-    return student
-def enter_Professor():
-    professor=[]
-    count = 1
-    while count <= 10:
-        professor.append(Professor(input('Name: '), int(input('Phone Number: ')), input('Email Address: '), int(input('Salary: '))).outputProfessor())
-        count += 1
-    return professor
+import pickle
+import Member
+def dump_student(L):
+    for i in L:
+        f=open('list.obj','wb')
+        pickle.dump(i,f)
+        f.close()
 
-def main():
-    print(enter_Person())
-    print(enter_Student())
-    print(enter_Professor())
-
-if __name__=='__main()__':
-    main()
+def load_student(L):
+    f = open('list.obj','r')
+    r = pickle.load(f)
+    return r
+# dump_student
+dump_student(L)
+load_student(L)
