@@ -34,6 +34,6 @@ class Professor(Person):
         self.salary = Salary
 
     def outputProfessor(self) -> str:
-        ans = self.outputPerson() + 'Salary: '+str(self.salary)
+        ans = self.outputPerson() + 'Salary: '+str(self.salary)+ '\n'
         return ans
 
