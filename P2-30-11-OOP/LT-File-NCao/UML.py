@@ -15,15 +15,15 @@ class Person:
 
 class Student(Person):
     studentnumber: str
-    averagemark: float
+    averagemark: str
 
     def __init__(self, Name, PhoneNumber, EmailAddress,StudentNumber,AverageMark) -> None:
         Person.__init__(self,Name, PhoneNumber, EmailAddress)
         self.studentnumber = StudentNumber
         self.averagemark = AverageMark
 
-    def outputStudent(self) -> str:
-        ans = self.outputPerson() + 'Student Number: '+self.studentnumber+'; Average Mark: '+str(self.averagemark)+'\n'
+    def getStudent(self) -> str:
+        ans = self.outputPerson() + 'Student Number: '+self.studentnumber+'; Average Mark: '+self.averagemark
         return ans
 
 class Professor(Person):
