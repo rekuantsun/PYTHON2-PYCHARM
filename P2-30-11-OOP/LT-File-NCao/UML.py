@@ -23,7 +23,7 @@ class Student(Person):
         self.averagemark = AverageMark
 
     def getStudent(self) -> str:
-        ans = self.outputPerson() + 'Student Number: '+self.studentnumber+'; Average Mark: '+self.averagemark
+        ans = self.outputPerson() + 'Student Number: '+self.studentnumber+'; Average Mark: '+self.averagemark+'\n'
         return ans
 
 class Professor(Person):
