@@ -48,7 +48,7 @@ class Credit(Payment):
     expDate: str
 
     def __init__(self, Amount,number, type, expDate) -> None:
-        Payment.__init__(Amount)
+        Payment.__init__(self,Amount)
         self.number=number
         self.type=type
         self.expDate=expDate
