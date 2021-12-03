@@ -22,7 +22,7 @@ class Student(Person):
         self.studentnumber = StudentNumber
         self.averagemark = AverageMark
 
-    def getStudent(self) -> str:
+    def outputStudent(self) -> str:
         ans = self.outputPerson() + 'Student Number: '+self.studentnumber+'; Average Mark: '+self.averagemark+'\n'
         return ans
 

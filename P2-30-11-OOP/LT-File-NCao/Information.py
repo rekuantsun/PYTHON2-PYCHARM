@@ -24,7 +24,7 @@ def main():
     count1=0
     while count1 < 10:
         print(per[count1].outputPerson())
-        print(stu[count1].getStudent())
+        print(stu[count1].outputStudent())
         print(pro[count1].outputProfessor())
         count1+=1
 
@@ -46,7 +46,7 @@ def main():
 
     for i in stu:
         f = open('stu.txt', 'wb')
-        pickle.dump(i.getStudent(), f)
+        pickle.dump(i.outputStudent(), f)
         f.close()
 
     for i in pro:
