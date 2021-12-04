@@ -56,9 +56,27 @@ class Credit(Payment):
     def authorized(self):
         pass
 
+class OrderDetail():
+    quantily: str
+    taxStatus: str
+    item: Item
+
+    def __init__(self,Quantily,TaxStatus) -> None:
+        super().__init__()
+        self.quantily=Quantily
+        self.taxStatus=TaxStatus
+
+    def calcSubTotal(self):
+        pass
+    def calcWeight(self):
+        pass
+    def calcTaxt(self):
+        pass
+
 class Order():
     date: datetime
     status: str
+    orderdetail: list[OrderDetail]
     payment: list[Cash,Check,Credit]
 
     def __init__(self,date,status) -> None:
@@ -75,23 +93,6 @@ class Order():
     def calcTotalWeight(self):
         pass
 
-class OrderDetail():
-    quantily: str
-    taxStatus: str
-    item: Item
-    order: Order
-
-    def __init__(self,Quantily,TaxStatus) -> None:
-        super().__init__()
-        self.quantily=Quantily
-        self.taxStatus=TaxStatus
-
-    def calcSubTotal(self):
-        pass
-    def calcWeight(self):
-        pass
-    def calcTaxt(self):
-        pass
 
 class Customer():
     name: str
