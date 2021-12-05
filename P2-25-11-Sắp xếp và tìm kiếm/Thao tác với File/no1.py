@@ -3,7 +3,7 @@
 - Nhập tên tập tin từ bàn phím
 - Lưu chuỗi ký tự ở trên vào tập tin.'''
 cktu = input("Nhập 1 chuỗi: ")
-ttt = input("Nhập tên tệp: ") + ".txt"
-f=open(ttt,'w')
+ttt = input("Nhập tên tệp: ")
+f = open(ttt,'w')
 f.write(cktu)
 f.close()

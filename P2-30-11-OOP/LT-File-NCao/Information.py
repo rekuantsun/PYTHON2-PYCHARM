@@ -23,8 +23,13 @@ def main():
    #Display
     count1=0
     while count1 < 10:
+        print('Person',count+1)
         print(per[count1].outputPerson())
+
+        print('Student',count+1)
         print(stu[count1].outputStudent())
+
+        print('Professor',count+1)
         print(pro[count1].outputProfessor())
         count1+=1
 
@@ -33,12 +38,14 @@ def main():
         for j in range(i+1,10):
             if per[i].name < per[j].name:
                 per[i],per[j]=per[j],per[i]
-            if stu[i].averagemark < stu[j].averagemark:
-                stu[i],stu[j]=stu[j],stu[i]
-            if pro[i].salary > pro[j].salary:
-                pro[i],pro[j]=pro[j],pro[i]
 
-    #Dump lists into file
+            if stu[i].averagemark < stu[j].averagemark:
+                stu[i],stu[j] = stu[j],stu[i]
+
+            if pro[i].salary > pro[j].salary:
+                pro[i],pro[j] = pro[j],pro[i]
+
+  #Dump lists into file
     for i in per:
         f = open('per.txt', 'wb')
         pickle.dump(i.outputPerson(), f)
