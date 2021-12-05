@@ -62,23 +62,23 @@ def main():
         f.close()
 
     #Load lists from file
+    f = open('per.txt', 'rb')
     for i in range(10):
-        f = open('per.txt', 'rb')
         a = pickle.load(f)
-        f.close()
         print(a)
+    f.close()
 
+    f = open('stu.txt', 'rb')
     for i in range(10):
-        f = open('stu.txt', 'rb')
         b = pickle.load(f)
-        f.close()
         print(b)
+    f.close()
 
+    f = open('pro.txt', 'rb')
     for i in range(10):
-        f = open('pro.txt', 'rb')
         c = pickle.load(f)
-        f.close()
         print(c)
+    f.close()
 
 if __name__=='__main__':
     main()
