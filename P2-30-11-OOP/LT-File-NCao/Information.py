@@ -3,11 +3,12 @@ import pickle
 
 def main():
     # Enter Information
+    n=2
     per = []
     stu = []
     pro = []
     count = 1
-    while count <= 10:
+    while count <= n:
         print('Person',count)
         per.append(Person(input('Name:'), input('Phone: '), input('Email: ')))
 
@@ -22,7 +23,7 @@ def main():
 
    #Display
     count1=0
-    while count1 < 10:
+    while count1 < n:
         print('Person',count+1)
         print(per[count1].outputPerson())
 
@@ -34,8 +35,8 @@ def main():
         count1+=1
 
     #Sort lists
-    for i in range(10):
-        for j in range(i+1,10):
+    for i in range(n):
+        for j in range(i+1,n):
             if per[i].name < per[j].name:
                 per[i],per[j]=per[j],per[i]
 
@@ -63,19 +64,19 @@ def main():
 
     #Load lists from file
     f = open('per.txt', 'rb')
-    for i in range(10):
+    for i in range(n):
         a = pickle.load(f)
         print(a)
     f.close()
 
     f = open('stu.txt', 'rb')
-    for i in range(10):
+    for i in range(n):
         b = pickle.load(f)
         print(b)
     f.close()
 
     f = open('pro.txt', 'rb')
-    for i in range(10):
+    for i in range(n):
         c = pickle.load(f)
         print(c)
     f.close()
