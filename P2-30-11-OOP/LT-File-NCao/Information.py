@@ -47,36 +47,36 @@ def main():
                 pro[i],pro[j] = pro[j],pro[i]
 
   #Dump lists into file
+    f = open('per.txt', 'wb')
     for i in per:
-        f = open('per.txt', 'wb')
         pickle.dump(i.outputPerson(), f)
-        f.close()
+    f.close()
 
+    f = open('stu.txt', 'wb')
     for i in stu:
-        f = open('stu.txt', 'wb')
         pickle.dump(i.outputStudent(), f)
-        f.close()
+    f.close()
 
+    f = open('pro.txt', 'wb')
     for i in pro:
-        f = open('pro.txt', 'wb')
         pickle.dump(i.outputProfessor(), f)
-        f.close()
+    f.close()
 
     #Load lists from file
     f = open('per.txt', 'rb')
-    for i in range(n):
+    for i in per:
         a = pickle.load(f)
         print(a)
     f.close()
 
     f = open('stu.txt', 'rb')
-    for i in range(n):
+    for i in stu:
         b = pickle.load(f)
         print(b)
     f.close()
 
     f = open('pro.txt', 'rb')
-    for i in range(n):
+    for i in pro:
         c = pickle.load(f)
         print(c)
     f.close()
