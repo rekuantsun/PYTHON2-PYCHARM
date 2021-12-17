@@ -2,8 +2,9 @@ from UML import Person,Student,Professor
 import pickle
 
 def main():
+
     # Enter Information
-    n=2
+    n=3
     per = []
     stu = []
     pro = []
@@ -24,17 +25,17 @@ def main():
    #Display
     count1=0
     while count1 < n:
-        print('Person',count+1)
+        print('Person',count1+1)
         print(per[count1].outputPerson())
 
-        print('Student',count+1)
+        print('Student',count1+1)
         print(stu[count1].outputStudent())
 
-        print('Professor',count+1)
+        print('Professor',count1+1)
         print(pro[count1].outputProfessor())
         count1+=1
 
-    #Sort lists
+ #Sort lists
     for i in range(n):
         for j in range(i+1,n):
             if per[i].name < per[j].name:
