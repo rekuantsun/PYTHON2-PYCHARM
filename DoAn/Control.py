@@ -1,7 +1,8 @@
-from Model import Person,Student,Professor,Score,Subject,Faculty
+from Model import Person, Student, Professor, Score, Subject, Faculty
+import pickle
 
-class InfoStudent:
-    listStu = list[Student]
+class StudentManager:
+    listStu: list[Student]
 
     def __init__(self) -> None:
         super().__init__()
@@ -12,5 +13,9 @@ class InfoStudent:
 
     def getlistStu(self) -> list[Student]:
         return self.listStu
+
+
+
+
 
 

@@ -1,3 +1,6 @@
+import pickle
+
+
 class Person:
     name: str
     sex: str
@@ -12,7 +15,7 @@ class Person:
         self.email = email
 
     def displayPer(self) -> str:
-        result='name: '+ self.name +'\tsex: '+ self.sex + '\tphone: ' + self.phone + '\temail: ' + self.email
+        result='name: '+ self.name +'\nsex: '+ self.sex + '\nphone: ' + self.phone + '\nemail: ' + self.email
         return result
 
 class Score:
@@ -40,8 +43,8 @@ class Score:
         return self.industrious
 
     def displayScore(self) -> str:
-        display= 'Average mark: ' + str(self.gpa) + '\nTest mark: ' + str(self.test) +\
-                 '\nIndustrious point: ' + self.industrious
+        display= 'Score Board:' + '\nAverage mark: ' + str(self.gpa) + '\nTest mark: ' + str(self.test) +\
+                 '\nIndustrious point: ' + self.industrious + '\n'
         return display
 
 class Faculty:
@@ -91,7 +94,7 @@ class Professor(Person):
 
     def displayPro(self) -> str:
         display=self.displayPer() + '\nQualification: ' + self.qualification+\
-                ';\tFaculty: ' + self.faculty.displayFac() + ';\tSalary: '+str(self.salary)
+                '\n' + self.faculty.displayFac() + 'Salary: '+str(self.salary) + '\n'
         return display
 
 class Subject:
@@ -100,11 +103,10 @@ class Subject:
     marker: Professor
     scoreboard: list[Score]
 
-    def __init__(self,name: str, credit: int, marker: Professor) -> None:
+    def __init__(self,name: str, credit: int) -> None:
         super().__init__()
         self.name = name
         self.credit = credit
-        self.marker = marker
         self.scoreboard = []
 
     def setnamesub(self,name: str) -> None:
@@ -127,23 +129,20 @@ class Subject:
         return self.scoreboard
 
     def displaySub(self) -> str:
-        display= 'Subject: ' + self.name +';\tCredits: ' + str(self.credit) +\
-                 ';\nMarker\n' + self.marker.displayPro() + '\n'
+        display= 'Subject: ' + self.name +';\tCredits: ' + str(self.credit) + '\n' + 'Marker\n' + self.marker.displayPro()
         for i in self.scoreboard:
-            display += (i.displayScore() + '\t')
+            display += i.displayScore() + '\n'
         return display
 
 class Student(Person):
     faculty: Faculty
     id: str
     listSub: list[Subject]
-    scoreboard: list[Score]
 
     def __init__(self, name, sex, phone, email, id) -> None:
         Person.__init__(self, name, sex, phone, email)
         self.id=id
         self.listSub=[]
-        self.scoreboard=[]
 
     def setfaculty(self,faculty: Faculty) -> None:
         self.faculty=faculty
@@ -153,28 +152,17 @@ class Student(Person):
         self.listSub=listSub
     def addsubject(self, subject: Subject) -> None:
         self.listSub.append(subject)
-    def setscoreboard(self,scoreboard: list[Score]) -> None:
-        self.scoreboard=scoreboard
-    def addscore(self,score: Score) -> None:
-        self.scoreboard.append(score)
     def getfaculty(self) -> Faculty:
         return self.faculty
     def getid(self) -> str:
         return self.id
     def getlistsub(self) -> list[Subject]:
         return self.listSub
-    def getscoreboard(self) -> list[Score]:
-        return self.scoreboard
 
-    def displayStu(self) -> str:
-        display= self.displayPer() + '\nFaculty: ' + self.faculty.displayFac() + ';\tID: ' + self.id +  '\n'
+    def displayStu(self,faculty: Faculty) -> str:
+        display = self.displayPer() + '\nID: ' + self.id + '\n' + faculty.displayFac() + '\n'
         for i in self.listSub:
-            display += (i.displaySub() + '\t')
+            display += i.displaySub() + '\n'
         return display
-
-
-
-
-
 
 
