@@ -11,7 +11,7 @@ class EnterInformation:
         student = Student(name,sex,phone,email,id)
         return student
 
-    def Subject(self) -> Subject:
+    '''def Subject(self) -> Subject:
         name = input('Tên môn học: ')
         credit = int(input('Số tín chỉ: '))
         subject = Subject(name,credit)
@@ -22,4 +22,4 @@ class EnterInformation:
         test=float(input('điểm thi: '))
         industrious=input('điểm chuyên cần: ')
         score=Score(gpa,test,industrious)
-        return score
+        return score'''

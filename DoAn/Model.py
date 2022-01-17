@@ -1,5 +1,3 @@
-import pickle
-
 
 class Person:
     name: str
@@ -43,7 +41,7 @@ class Score:
         return self.industrious
 
     def displayScore(self) -> str:
-        display= 'Score Board:' + '\nAverage mark: ' + str(self.gpa) + '\nTest mark: ' + str(self.test) +\
+        display= 'Score Board' + '\nAverage mark: ' + str(self.gpa) + '\nTest mark: ' + str(self.test) +\
                  '\nIndustrious point: ' + self.industrious + '\n'
         return display
 

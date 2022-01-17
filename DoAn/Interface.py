@@ -18,7 +18,7 @@ def interface():
 
 
 def main():
-    #khởi tạo
+    '''    #khởi tạo
     qlsv = StudentManager()
     ntt = EnterInformation()
 
@@ -79,8 +79,9 @@ def main():
         f.close()
 
     # tìm kiếm sinh viên
-    '''if choose == 2:
-        name=input()'''
+    if choose == 2:
+        name=input()
+'''
 
 if __name__=='__main__':
     main()
